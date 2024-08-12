@@ -1,6 +1,7 @@
 {
   "dockerComposeFile": "../docker-compose.yml",
   "service": "web",
+  "runServices": ["watch", "web", "opensearch-node-mitopen", "db", "tika", "celery", "nginx","redis"], 
   "features": {
   }
 }
