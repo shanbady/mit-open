@@ -41,3 +41,10 @@ services:
       file: docker-compose.yml
       service: nginx
     env_file: env/codespaces.env
+
+
+volumes:
+  opensearch-data1:
+  django_media:
+  yarn-cache:
+  pgdata:
