@@ -67,15 +67,9 @@ services:
       context: .
       dockerfile: Dockerfile
     env_file:
-      - path: env/shared.env
-      - path: env/shared.local.env
-        required: false
-      - path: env/backend.env
-      - path: env/backend.local.env
-        required: false
-      # DEPRECATED: legacy .env file at the repo root
-      - path: .env
-        required: false
+      - env/shared.env
+      - env/backend.env
+      - .env
     command: ./scripts/run-django-dev.sh
     stdin_open: true
     tty: true
@@ -101,15 +95,9 @@ services:
         yarn workspace mit-open storybook --no-open &
         yarn workspace mit-open watch:docker
     env_file:
-      - path: env/shared.env
-      - path: env/shared.local.env
-        required: false
-      - path: env/frontend.env
-      - path: env/frontend.local.env
-        required: false
-      # DEPRECATED: legacy .env file at the repo root
-      - path: .env
-        required: false
+      - env/shared.env
+      - env/frontend.env
+      - .env
     ports:
       - "8062:8062"
       - "6006:6006"
@@ -123,15 +111,9 @@ services:
       context: .
       dockerfile: Dockerfile
     env_file:
-      - path: env/shared.env
-      - path: env/shared.local.env
-        required: false
-      - path: env/backend.env
-      - path: env/backend.local.env
-        required: false
-      # DEPRECATED: legacy .env file at the repo root
-      - path: .env
-        required: false
+       - env/shared.env
+       - env/backend.env
+       - .env
     command: >
       /bin/bash -c '
       sleep 3;
