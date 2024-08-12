@@ -69,7 +69,6 @@ services:
     env_file:
       - env/shared.env
       - env/backend.env
-      - .env
     command: ./scripts/run-django-dev.sh
     stdin_open: true
     tty: true
@@ -97,7 +96,6 @@ services:
     env_file:
       - env/shared.env
       - env/frontend.env
-      - .env
     ports:
       - "8062:8062"
       - "6006:6006"
@@ -113,7 +111,6 @@ services:
     env_file:
        - env/shared.env
        - env/backend.env
-       - .env
     command: >
       /bin/bash -c '
       sleep 3;
