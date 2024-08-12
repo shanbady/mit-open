@@ -17,8 +17,8 @@ services:
       service: web
     env_file: env/codespaces.env
     env:
-      MITOPEN_API_BASE_URL: "https://${CODESPACE_NAME}-${8063}.githubpreview.dev"
-      MITOPEN_APP_BASE_URL: "https://${CODESPACE_NAME}-${8063}.githubpreview.dev"
+      MITOPEN_API_BASE_URL: "https://${CODESPACE_NAME}-8063.githubpreview.dev"
+      MITOPEN_APP_BASE_URL: "https://${CODESPACE_NAME}-8062.githubpreview.dev"
   celery:
     extends:
       file: docker-compose.yml
@@ -35,8 +35,8 @@ services:
       service: watch
     env_file: env/codespaces.env
     env:
-      MITOPEN_API_BASE_URL: "https://${CODESPACE_NAME}-${8063}.githubpreview.dev"
-      MITOPEN_APP_BASE_URL: "https://${CODESPACE_NAME}-${8063}.githubpreview.dev"
+      MITOPEN_API_BASE_URL: "https://${CODESPACE_NAME}-8063.githubpreview.dev"
+      MITOPEN_APP_BASE_URL: "https://${CODESPACE_NAME}-8061.githubpreview.dev"
   opensearch-node-mitopen:
     extends:
       file: docker-compose.yml
