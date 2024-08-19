@@ -33,7 +33,7 @@
     },
     "features":
     {},
-    "postStartCommand": "python manage.py update_offered_by && python manage.py update_platforms && python manage.py update_departments_schools && python manage.py populate_featured_lists && python manage.py backpopulate_resource_channels --overwrite --all && python manage.py update_course_number_departments && python manage.py backpopulate_mitxonline_data && python manage.py backpopulate_micromasters_data",
+    "postStartCommand": "sleep 100 && python manage.py update_offered_by && python manage.py update_platforms && python manage.py update_departments_schools && python manage.py populate_featured_lists && python manage.py backpopulate_resource_channels --overwrite --all && python manage.py update_course_number_departments && python manage.py backpopulate_mitxonline_data && python manage.py backpopulate_micromasters_data",
     "forwardPorts":
     [
         8062,
