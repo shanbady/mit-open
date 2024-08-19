@@ -91,8 +91,8 @@ services:
     command:
       - |
         yarn install --immutable
-        yarn workspace mit-open storybook --no-open &
-        yarn workspace mit-open watch:docker
+        yarn workspace mit-learn storybook --no-open &
+        yarn workspace mit-learn watch:docker
     env_file:
       - env/shared.env
       - env/frontend.env
@@ -114,8 +114,8 @@ services:
     command: >
       /bin/bash -c '
       sleep 3;
-      celery -A main.celery:app worker -Q default -B -l ${MITOPEN_LOG_LEVEL:-INFO} &
-      celery -A main.celery:app worker -Q edx_content,default -l ${MITOPEN_LOG_LEVEL:-INFO}'
+      celery -A main.celery:app worker -Q default -B -l ${MITOL_LOG_LEVEL:-INFO} &
+      celery -A main.celery:app worker -Q edx_content,default -l ${MITOL_LOG_LEVEL:-INFO}'
     links:
       - db
       - opensearch-node-mitopen

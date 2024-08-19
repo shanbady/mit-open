@@ -9,7 +9,6 @@ from opensearch_dsl import Search
 from opensearch_dsl.query import MoreLikeThis, Percolate
 from opensearchpy.exceptions import NotFoundError
 
-from learning_resources.constants import LEARNING_RESOURCE_SORTBY_OPTIONS
 from learning_resources.models import LearningResource
 from learning_resources_search.connection import (
     get_default_alias_name,
@@ -21,6 +20,7 @@ from learning_resources_search.constants import (
     DEPARTMENT_QUERY_FIELDS,
     LEARNING_RESOURCE,
     LEARNING_RESOURCE_QUERY_FIELDS,
+    LEARNING_RESOURCE_SEARCH_SORTBY_OPTIONS,
     LEARNING_RESOURCE_TYPES,
     RESOURCEFILE_QUERY_FIELDS,
     RUN_INSTRUCTORS_QUERY_FIELDS,
@@ -89,7 +89,7 @@ def generate_sort_clause(search_params):
     """
 
     sort = (
-        LEARNING_RESOURCE_SORTBY_OPTIONS.get(search_params.get("sortby"), {})
+        LEARNING_RESOURCE_SEARCH_SORTBY_OPTIONS.get(search_params.get("sortby"), {})
         .get("sort")
         .replace("0__", "")
         .replace("__", ".")
@@ -228,14 +228,6 @@ def generate_learning_resources_text_clause(text):
                                 "fields": DEPARTMENT_QUERY_FIELDS,
                             }
                         },
-                    }
-                },
-                {
-                    "wildcard": {
-                        "readable_id": {
-                            "value": f"{text.upper()}*",
-                            "rewrite": "constant_score",
-                        }
                     }
                 },
                 {

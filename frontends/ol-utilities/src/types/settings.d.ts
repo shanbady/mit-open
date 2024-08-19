@@ -8,8 +8,9 @@ export type PostHogSettings = {
 
 export declare global {
   declare const APP_SETTINGS: {
-    MITOPEN_AXIOS_WITH_CREDENTIALS?: boolean
-    MITOPEN_API_BASE_URL: string
+    MITOL_AXIOS_WITH_CREDENTIALS?: boolean
+    MITOL_API_BASE_URL: string
+    CSRF_COOKIE_NAME: string
     EMBEDLY_KEY: string
     CKEDITOR_UPLOAD_URL?: string
     SENTRY_DSN?: string
@@ -17,7 +18,7 @@ export declare global {
     SENTRY_ENV?: string
     POSTHOG?: PostHogSettings
     SITE_NAME: string
-    MITOPEN_SUPPORT_EMAIL: string
+    MITOL_SUPPORT_EMAIL: string
     PUBLIC_URL: string
   }
 }

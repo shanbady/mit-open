@@ -1,6 +1,42 @@
 Release Notes
 =============
 
+Version 0.16.1 (Released August 15, 2024)
+--------------
+
+- set csrf cookie name from env var (#1420)
+- Expose the SESSION_COOKIE_NAME setting (#1418)
+- Update the ETL pipelines times (#1416)
+- Add accessibility linting (#1395)
+- Undo Change to default sort (#1414)
+- Make MITOL_ settings optional in app.json (#1412)
+- Rename the variables on release workflows (#1409)
+- Fix typo in env variable prefix (#1406)
+- cache learning resources search api view (#1392)
+- rename MIT Open to MIT Learn (#1389)
+- Rename env var prefix MITOPEN_ to MITOL_ (#1388)
+- adding fix for logo in email (#1404)
+- Change Default sort to featured (#1377)
+- Empty user list items view (#1376)
+
+Version 0.16.0 (Released August 13, 2024)
+--------------
+
+- Update values of hostnames to use learn.mit.edu (#1401)
+- Add featured ranks to the opensearch index (#1381)
+- Fix homepage contrast issues (#1371)
+- copy update for mitx channel page (#1400)
+- Update Yarn to v4.4.0 (#1399)
+- Update search term event handler to clear page if the term changes and is submitted, updating tests for this (#1387)
+- fix prettier and eslint in pre-commit (#1391)
+- Rename MIT Open to MIT Learn for subscription emails (#1390)
+- enable mailgun and analytics (#1370)
+- update suppport email (#1385)
+- Update topic boxes to support multiple lines (#1380)
+- Update dependency Django to v4.2.15 [SECURITY] (#1384)
+- adding version specifier for renovate (#1378)
+- Create, Edit and Delete User List modal UI (#1356)
+
 Version 0.15.1 (Released August 07, 2024)
 --------------
 
@@ -358,7 +394,7 @@ Version 0.13.4 (Released June 14, 2024)
 Version 0.13.3 (Released June 14, 2024)
 --------------
 
-- Adds ScrollRestoration to the spot in the routes; sets it up so it works only if the path change; adds a mit-open mock for window.scrollTo (#1071)
+- Adds ScrollRestoration to the spot in the routes; sets it up so it works only if the path change; adds a mit-learn mock for window.scrollTo (#1071)
 - Change LOGIN_REDIRECT_URL and LOGOUT_REDIRECT_URL to use the base URL (#1075)
 - dashboard home (#1062)
 
@@ -366,7 +402,7 @@ Version 0.13.2 (Released June 13, 2024)
 --------------
 
 - Update education options and add to schema (#1069)
-- local dev: Read `MITOPEN_AXIOS_BASE_PATH` from env (#1065)
+- local dev: Read `MITOL_AXIOS_BASE_PATH` from env (#1065)
 - Add featured courses carousel to unit channel page (#1059)
 - Add ordering to testimonials, adjust view on homepage testimonial carousel (#1067)
 - Change channel type and url from "offeror" to "unit" (#1031)
