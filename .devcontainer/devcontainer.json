@@ -25,10 +25,15 @@
         "OLL_API_CLIENT_SECRET":
         {},
         "OLL_API_CLIENT_ID":
+        {},
+        "SEE_API_CLIENT_ID":
+        {},
+        "SEE_API_CLIENT_SECRET":
         {}
     },
     "features":
     {},
+    "postStartCommand": "python manage.py update_offered_by && python manage.py update_platforms && python manage.py update_departments_schools && python manage.py populate_featured_lists && python manage.py backpopulate_resource_channels --overwrite --all && python manage.py update_course_number_departments",
     "forwardPorts":
     [
         8061,
