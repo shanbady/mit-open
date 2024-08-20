@@ -138,6 +138,7 @@ SCIM_SERVICE_PROVIDER = {
 # OAuth2TokenMiddleware must be before SCIMAuthCheckMiddleware
 # in order to insert request.user into the request.
 MIDDLEWARE = (
+    "corsheaders.middleware.CorsMiddleware",
     "django.middleware.security.SecurityMiddleware",
     "django.contrib.sessions.middleware.SessionMiddleware",
     "django.middleware.common.CommonMiddleware",
@@ -145,7 +146,6 @@ MIDDLEWARE = (
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
-    "corsheaders.middleware.CorsMiddleware",
     "authentication.middleware.BlockedIPMiddleware",
     "authentication.middleware.SocialAuthExceptionRedirectMiddleware",
     "hijack.middleware.HijackUserMiddleware",
